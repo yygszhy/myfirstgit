@@ -1,0 +1,116 @@
+{% extends "global/Page.html" %}
+{% load otree_tags staticfiles %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="instructions well well-lg" style="position:absolute; top:130px;width: 900px; ">
+
+    <p>
+        <strong>{{ payoffpair }}</strong> was randomly selected. You chose <strong>Money Machine {{ payoffpairaorb }}</strong>.
+        You can now play your money machine by clicking on the “Determine Outcome” button.
+    </p>
+
+</div>
+
+<div style="
+    position: absolute;
+    margin-left:100px;
+    top:240px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:420px;
+    top:240px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+
+<div><button name="payoff_choicea"
+            value="True" Type="button" class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ opacitya }}; position: absolute; top:270px;
+            height: 100px; width: 300px; font-size: 15px; margin-left:100px">
+            <p id="pc1" style="text-indent: 10px; line-height: 70%;">
+    <p align="right" style="margin-right:100px; line-height: 70%; ">{{ payoffa }}¢
+    <p id="linea" align="right" style="margin-right:100px;   visibility: hidden;line-height: 70%; "> 0¢
+    </button>
+    <button name="payoff_choiceb"
+            value="False" Type="button" class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmbcolor }}; opacity: {{ opacityb }}; position: absolute; top:270px;
+            height: 100px; width: 300px;font-size: 15px; margin-left:420px"><p id="pc2" style="text-indent: 10px; line-height: 70%;">
+    <p align="right" style="margin-right:100px; line-height: 70%; ">{{ payoffb }}¢
+    <p id="lineb" align="right" style="margin-right:100px;   visibility: hidden;line-height: 70%; "> 0¢
+    </button>
+</div>
+
+<div>
+
+<button id="show" Type="button" root, command=oneclick
+            style="display:inline-block; margin-left:280px;
+            background-color: rgb(255,255,255); position: absolute; top:390px;
+            height: 30px; width: 250px; font-size: 15px; font-weight: bold;">
+    Determine Outcome
+</button>
+</div>
+
+<div class="outcome" style="padding: 50px; display: none;position: absolute; top:400px;">
+    The outcome from your money machine is <strong>{{ payoff }}¢</strong>.
+    Please click on the “Next” button.
+</div>
+
+<button class="otree-next-button btn btn-primary next-button" style="position:absolute; top:500px">Next</button>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "Confidence_study1d/jquery-3.2.1.js" %}"></script>
+<script>
+
+var probb = {{probb|json}};
+
+var linea = document.getElementById("linea");
+var lineb = document.getElementById("lineb");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (probb == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+    $(document).ready(function(){
+         $("#show").click(function(){
+            $('.outcome').slideDown("slow");
+            $(this).prop('disabled', true);
+         });
+    });
+
+
+</script>
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .no-click {
+    pointer-events: none;
+}
+</style>
+
+
+{% endblock %}

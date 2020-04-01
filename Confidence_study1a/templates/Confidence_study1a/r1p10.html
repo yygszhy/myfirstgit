@@ -1,0 +1,477 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+<div style="text-align: center">Money Machine Pair 10/{{Constants.num_problemsets}}</div>
+<div style="text-align: center">Sampling Stage</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg" style="position:absolute; top:200px;width: 900px;">
+
+    <p>First, please click on the money machines; you may sample as often as you like.</p>
+    <p>
+       Second, please click on the "Make Decision" button when ready to make your binding choice.
+        <button class="otree-next-button btn btn-primary next-button" disabled="true" id="makedecision" style="position:absolute; top: 35px; margin-left:60px" >Make Decision</button>
+    </p>
+</div>
+
+<div style="
+  position: absolute;
+    margin-left:100px;
+    top:325px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+  position: absolute;
+    margin-left:420px;
+    top:325px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+
+<div><button class="mm10as" type="button" id="mm10as"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; position: absolute; top:350px; height: 100px;
+            width: 300px; font-size: 15px; margin-left:100px">
+    <p id="pc1" style="line-height: 70%;">
+    <p align="right" style="margin-right:100px;line-height: 70%; ">{{ amounta10 }}¢
+    <p id="linea" align="right" style="margin-right:100px;  visibility: hidden;line-height: 70%; "> 0¢
+    </button>
+    <button class="mm10bs" type="button" id="mm10bs"
+            style="text-align: left; background-color: {{ Constants.mmbcolor }}; position: absolute; top:350px; height: 100px; width: 300px; font-size: 15px; margin-left:420px">
+            <p id="pc2" style="line-height: 70%;">
+        <p align="right" style="margin-right:100px;line-height: 70%; ">{{ amountb10 }}¢
+    <p id="lineb" align="right" style="margin-right:100px; visibility: hidden; line-height: 70%; "> 0¢
+    </button>
+    <p>
+
+
+    </p>
+</div>
+
+<div class="container1" style="border: hidden;
+    top:450px;
+    position:absolute;
+    width: 280px;
+    margin-left: 100px;
+    height: 500px;
+    padding: 10px;
+    display:inline-block;">
+    <p>
+        {{ player.text10a }}
+    </p>
+
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+            <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+        <button  class="toAdd">{{player.sa10}}¢</button>
+
+
+</div>
+
+<div class="container2" style="border: hidden;
+    width: 280px;
+    height: 500px;
+    position:absolute;
+    margin-left: 420px;
+    top:450px;
+    padding: 10px;
+    display:inline-block;">
+    <p>
+        {{ player.text10b }}
+    </p>
+
+
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+            <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+        <button class="toAdd2">{{player.sb10}}¢</button>
+
+
+
+
+</div>
+<p class="warning" style="margin-left: 100px;display: none;">Warning: you are about to reach the maximum amount of sample draws of 100. </p>
+<p>
+    <input id="id_clicksmmb10" name="clicksmmb10" type="hidden" value="0"></input>
+    <input id="id_clicksmma10" name="clicksmma10" type="hidden" value="0"></input>
+    <input id="id_samplemma10" name="samplemma10" type="hidden" value="0"></input>
+    <input id="id_samplemmb10" name="samplemmb10" type="hidden" value="0"></input>
+</p>
+
+
+
+
+{% endblock %}
+
+
+{% block styles %}
+<!-- define a style -->
+<style type="text/css">
+.toAdd {
+    display:inline-block;
+    background-color: white;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    display: none;
+    pointer-events: none;
+}
+.toAdd2 {
+    display:inline-block;
+    background-color: white;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    display: none;
+    pointer-events: none;
+}
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "Confidence_study1a/jquery-3.2.1.js" %}"></script>
+<script>
+
+
+var bo10 = {{ bo10|json }};
+var bo10str = bo10.toString();
+var probb = {{ probb10|json }};
+var proba = {{ proba10|json }};
+
+$('.toAdd').hide();
+$('.toAdd2').hide();
+
+var count = 0;
+$('.mm10as').on('click',function(){
+    $('.toAdd:eq('+count+')').show(1500);
+    count++;
+    hello();
+    delay();
+    if (count > 95) {
+    $('.warning').show();
+    };
+    if (probb == 1 ) {
+    document.getElementById("makedecision").disabled = false;
+    }
+});
+
+var countb = 0;
+$('.mm10bs').on('click',function(){
+    $('.toAdd2:eq('+countb+')').show(1500);
+    countb++;
+    hellob();
+    delay();
+    if (countb > 95) {
+    $('.warning').show();
+    };
+    if (proba == 1 ) {
+    document.getElementById("makedecision").disabled = false;
+    }
+});
+
+
+
+function delay(){
+    document.getElementById("mm10as").disabled = true;
+    document.getElementById("mm10bs").disabled = true;
+    setTimeout(function() {
+        document.getElementById("mm10as").disabled = false;
+        document.getElementById("mm10bs").disabled = false;
+    }, 1500);
+
+}
+
+
+   var clicks = 0;
+    function hello() {
+        clicks += 1;
+        document.getElementById("id_clicksmma10").innerHTML = clicks;
+        document.getElementById("id_clicksmma10").value = clicks;
+    };
+
+
+   var clicksb = 0;
+    function hellob() {
+        clicksb += 1;
+        document.getElementById("id_clicksmmb10").innerHTML = clicksb;
+        document.getElementById("id_clicksmmb10").value = clicksb;
+    };
+
+
+var tbl = document.getElementsByClassName("toAdd");
+var i = 0;
+var len = tbl.length;
+var text = [];
+    for(var i=0; i<len; i++) {
+        text.push(tbl[i].innerHTML.slice(0, -1));
+    };
+    document.getElementById("id_samplemma10").innerHTML = text;
+    document.getElementById("id_samplemma10").value = text;
+
+
+var tblb = document.getElementsByClassName("toAdd2");
+var j = 0;
+var lenb = tblb.length;
+var textb = [];
+    for(var j=0; j<lenb; j++) {
+        textb.push(tblb[j].innerHTML.slice(0, -1));
+    };
+    document.getElementById("id_samplemmb10").innerHTML = textb;
+    document.getElementById("id_samplemmb10").value = textb;
+
+
+var samplea = document.getElementsByClassName('toAdd');
+var i = 0;
+    for(var i=0; i<samplea.length; i++) {
+       if (samplea[i].innerHTML.slice(0, -1) == bo10 || samplea[i].innerHTML.slice(0, -1) < -0.5) {
+           samplea[i].style.backgroundColor = "lightblue";
+        } else {
+           samplea[i].style.backgroundColor = "white";
+    }
+    };
+
+var sampleb = document.getElementsByClassName('toAdd2');
+var i = 0;
+    for(var i=0; i<sampleb.length; i++) {
+       if (sampleb[i].innerHTML.slice(0, -1) == bo10 || sampleb[i].innerHTML.slice(0, -1) < -0.5) {
+           sampleb[i].style.backgroundColor = "orange";
+        } else {
+           sampleb[i].style.backgroundColor = "white";
+    }
+    };
+
+var linea = document.getElementById("linea");
+var lineb = document.getElementById("lineb");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (probb == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+<div style="text-align: center">Money Machine Pair 6/{{Constants.num_problemsets}}</div>
+<div style="text-align: center">Decision Stage</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg">
+
+    <p>
+        Thank you. Your choice of <strong>Money Machine {{ player.choice6 }}</strong> was recorded.
+        Please click on the "Next" button to the next pair of money machines.
+    </p>
+
+</div>
+
+
+    {% next_button %}
+
+{% endblock %}

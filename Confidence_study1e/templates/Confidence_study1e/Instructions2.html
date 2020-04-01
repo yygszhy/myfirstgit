@@ -1,0 +1,144 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block title %}
+<div style="text-align: center">Instructions</div>
+{% endblock %}
+
+{% block content %}
+<div class="instructions well well-lg" style="position:absolute; top:150px;width: 900px; ">
+    <p>
+        In this experiment you are asked to choose between two money machines. Your bonus depends on your choices.
+        Each money machine's possible outcomes are clearly stated, as shown in the example below. They can be positive as well as negative.
+        Sometimes they are certain, and at other times the probabilities of the outcomes are unknown.
+    </p>
+    <p>
+        To help you choose a money machine, we provide you with the record of previous plays at each machine: these are randomly drawn samples.
+        An example pair of money machines is shown below.
+    </p>
+</div>
+
+    <div style="
+    position: absolute;
+    margin-left:100px;
+    top:310px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:450px;
+    top:310px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+
+<div><button class="no-click" type="button"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; position: absolute; top:340px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+    <p style="text-indent: 10px;line-height: 70%;"> Possible outcomes:
+                <p style="float: left; line-height: 70%;width: 45%; text-align: right;">80</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
+    <p id="linea1"  style="float: left; line-height: 70%;width: 45%; text-align: right;">  0
+        <p id="linea2" style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
+    </button>
+    <button class="no-click" type="button"
+            style="text-align: left; background-color: {{ Constants.mmbcolor }}; position: absolute; top:340px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+        <p style="text-indent: 10px;line-height: 70%;"> Possible outcome:
+                      <p style="float: left; line-height: 70%;width: 45%; text-align: right;">50</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
+    <p id="lineb1"  style="visibility: hidden; float: left; line-height: 70%;width: 45%; text-align: right;">  0
+        <p id="lineb2" style="visibility: hidden; float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
+    </button>
+</div>
+
+          <div style="
+    position: absolute;
+    margin-left:100px;
+    top:450px;
+    width:340px;
+    text-align: left
+    ">
+    <p id="linea3">
+       Among 8 random sample draws from Money Machine A, 63% were 80¢ and 37% were 0¢.
+    </p>
+</div>
+    <div style="
+    position: absolute;
+    margin-left:450px;
+    top:450px;
+    width:340px;
+    text-align: left
+    ">
+    <p id="lineb4">Money Machine B has one possible outcome only, always 50¢.
+    </p>
+</div>
+
+<div class="instructions well well-lg" style="position:absolute; top:530px;width: 900px; ">
+    <p>
+        Whenever you are ready to make a choice, you can select your preferred money machine by clicking on it.
+    </p>
+
+    <p>
+        In total, there are {{Constants.num_problemsets}} pairs of money machines.
+        After you have made all your choices, we will randomly select one pair of money machines and play out your choice for that pair.
+        This random selection means that you should carefully consider each choice.
+    </p>
+
+    <p>
+
+        You start with an initial endowment of {{Constants.showupfee}}¢. The outcome from the selected money machine will be added to this initial endowment.
+        Depending on whether the money machine outcome is positive or negative, the bonus you receive at the end of this HIT can be bigger or smaller than {{Constants.showupfee}}¢.
+    </p>
+
+    <p>
+       Please click on the “Next” button to begin. Good luck.
+    </p>
+
+</div>
+
+
+   <button class="otree-next-button btn btn-primary next-button" id="next" style="position:absolute; top:780px" disabled="true">Next</button>
+{% endblock %}
+
+{% block styles %}
+<!-- define a style -->
+
+<style type="text/css">
+    .no-click {
+    display:inline-block;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    pointer-events: none;
+    background-color: white;
+}
+
+
+
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+function minviewtime() {
+    setTimeout(function(){
+    document.getElementById("next").disabled = false;
+    }, 10000);
+}
+window.onload = minviewtime;
+</script>
+
+
+{% endblock %}

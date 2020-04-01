@@ -1,0 +1,507 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+<div style="text-align: center">Money Machine Pair 1/{{Constants.num_problemsets}}</div>
+<div style="text-align: center">Sampling Stage</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg" style="position:absolute; top:200px;width: 900px; ">
+
+    <p>First, please click on the money machines; you may sample as often as you like.</p>
+    <p>
+       Second, please click on the "Make Decision" button when ready to make your binding choice.
+
+    <button class="otree-next-button btn btn-primary next-button" disabled="true" id="makedecision" style="position:absolute; top: 35px; margin-left:60px" >Make Decision</button>
+    </p>
+</div>
+
+<div style="
+    position: absolute;
+    margin-left:100px;
+    top:325px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:420px;
+    top:325px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+<div>
+    <p>
+
+
+
+    </p>
+</div>
+<div><button class="mm1as" type="button" id="mm1as"
+         style="text-align: left; background-color: {{ Constants.mmacolor }}; position: absolute; top:350px; height: 100px; width: 300px; font-size: 15px; margin-left:100px">
+    <p id="pc1" style="line-height: 70%;">
+    <p align ="right" style="margin-right: 100px;line-height: 70%; ">{{ amounta1 }}¢
+    <p id="linea" align="right"  style="margin-right:100px;  visibility: hidden;line-height: 70%; "> 0¢
+    </button>
+    <button class="mm1bs" type="button" id="mm1bs"
+           style="text-align: left; background-color: {{ Constants.mmbcolor }}; position: absolute; top:350px; height: 100px; width: 300px; font-size: 15px; margin-left:420px">
+        <p id="pc2" style="line-height: 70%;">
+        <p align="right" style="margin-right:100px;line-height: 70%; ">{{ amountb1 }}¢
+    <p id="lineb" align="right" style="margin-right:100px; visibility: hidden; line-height: 70%; "> 0¢
+    </button>
+
+</div>
+
+
+
+<div class="container1" id="container" style="border: hidden;
+    position:absolute;
+    top:450px;
+    width: 280px;
+    margin-left: 100px;
+    height: 500px;
+    padding: 10px;
+    display:inline-block">
+    <p id="texta"> {{ player.text1a }}
+    </p>
+
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+       <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+        <button  class="toAdd">{{player.sa1}}¢</button>
+</div>
+
+<div class="container2" style="border: hidden;
+    position:absolute;
+    top:450px;
+    width: 280px;
+    height: 500px;
+    margin-left: 420px;
+    padding: 10px;
+    display:inline-block">
+    <p id="textb"> {{ player.text1b }}
+    </p>
+
+
+
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+            <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+        <button class="toAdd2">{{player.sb1}}¢</button>
+
+
+</div>
+
+<p class="warning" style="margin-left: 100px;display: none;">Warning: you are about to reach the maximum amount of sample draws of 100. </p>
+<p>
+    <input id="id_clicksmmb1" name="clicksmmb1" type="hidden" value="0"></input>
+    <input id="id_clicksmma1" name="clicksmma1" type="hidden" value="0"></input>
+    <input id="id_samplemma1" name="samplemma1" type="hidden" value="0"></input>
+    <input id="id_samplemmb1" name="samplemmb1" type="hidden" value="0"></input>
+</p>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block styles %}
+<!-- define a style -->
+<style type="text/css">
+.toAdd {
+    display:inline-block;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    display: none;
+    pointer-events: none;
+}
+.toAdd2 {
+    display:inline-block;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    display: none;
+    pointer-events: none;
+}
+.no-click {
+    display:inline-block;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    pointer-events: none;
+}
+
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "Confidence_study1a/jquery-3.2.1.js" %}"></script>
+<script>
+
+var bo1 = {{ bo1|json }};
+var bo1str = bo1.toString();
+var amounta = {{ amounta1|json }};
+var amountb = {{ amountb1|json }};
+var probb = {{ probb1|json }};
+var proba = {{ proba1|json }};
+
+$('.toAdd').hide();
+$('.toAdd2').hide();
+
+<!--each click to show one sample-->
+
+var count = 0;
+var btnsDisabled = false;
+$('.mm1as').on('click',function(){
+<!--on each click to show one sample-->
+    $('.toAdd:eq('+count+')').show(1500);
+<!--count how many clicks = sample size-->
+    count++;
+<!--record number of the clicks and give the value to the element which goes to the field (dataset)-->
+    hello();
+    delay();
+    <!--if sample size > 95, a warning message will show up-->
+    if (count > 95) {
+    $('.warning').show();
+    };
+<!--The first click of uncertain money machine activates "make decision" button-->
+    if (probb == 1 ) {
+    document.getElementById("makedecision").disabled = false;
+    }
+});
+
+var countb = 0;
+$('.mm1bs').on('click',function(){
+    $('.toAdd2:eq('+countb+')').show(1500);
+    countb++;
+    hellob();
+    delay();
+    if (countb > 95) {
+    $('.warning').show();
+    };
+    if (proba == 1 ) {
+    document.getElementById("makedecision").disabled = false;
+    }
+});
+
+
+
+
+
+<!--record how many clicks = how many sample draws-->
+
+   var clicks = 0;
+    function hello() {
+        clicks += 1;
+        document.getElementById("id_clicksmma1").innerHTML = clicks;
+        document.getElementById("id_clicksmma1").value = clicks;
+    };
+
+
+   var clicksb = 0;
+    function hellob() {
+        clicksb += 1;
+        document.getElementById("id_clicksmmb1").innerHTML = clicksb;
+        document.getElementById("id_clicksmmb1").value = clicksb;
+    };
+
+<!--on each click, 2 money machines delay for 1500 miniseconds-->
+
+function delay(){
+    document.getElementById("mm1as").disabled = true;
+    document.getElementById("mm1bs").disabled = true;
+    setTimeout(function() {
+        document.getElementById("mm1as").disabled = false;
+        document.getElementById("mm1bs").disabled = false;
+    }, 1500);
+
+}
+
+<!--record full size sample draws (without euro sign) and store in an array -->
+
+var tbl = document.getElementsByClassName("toAdd");
+var i = 0;
+var len = tbl.length;
+var text = [];
+    for(var i=0; i<len; i++) {
+        text.push(tbl[i].innerHTML.slice(0, -1));
+    };
+    document.getElementById("id_samplemma1").innerHTML = text;
+    document.getElementById("id_samplemma1").value = text;
+
+
+var tblb = document.getElementsByClassName("toAdd2");
+var j = 0;
+var lenb = tblb.length;
+var textb = [];
+    for(var j=0; j<lenb; j++) {
+        textb.push(tblb[j].innerHTML.slice(0, -1));
+    };
+    document.getElementById("id_samplemmb1").innerHTML = textb;
+    document.getElementById("id_samplemmb1").value = textb;
+
+<!--set up the colors for bad outcomes in sample draws-->
+
+var samplea = document.getElementsByClassName('toAdd');
+var i = 0;
+    for(var i=0; i<samplea.length; i++) {
+       if (samplea[i].innerHTML.slice(0, -1) == bo1 || samplea[i].innerHTML.slice(0, -1) < -0.5) {
+           samplea[i].style.backgroundColor = "lightblue";
+        } else {
+           samplea[i].style.backgroundColor = "white";
+    }
+    };
+
+var sampleb = document.getElementsByClassName('toAdd2');
+var i = 0;
+    for(var i=0; i<sampleb.length; i++) {
+       if (sampleb[i].innerHTML.slice(0, -1) == bo1 || sampleb[i].innerHTML.slice(0, -1) < -0.5) {
+           sampleb[i].style.backgroundColor = "orange";
+        } else {
+           sampleb[i].style.backgroundColor = "white";
+    }
+    };
+
+
+var linea = document.getElementById("linea");
+var lineb = document.getElementById("lineb");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (probb == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+<div style="text-align: center">Money Machine Pair 4/{{Constants.num_problemsets}}</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg" style="position:absolute; top:200px;width: 900px; ">
+
+    <p>
+       When you are ready to make a binding choice, please click on your preferred money machine.
+    </p>
+</div>
+
+<div style="
+    position: absolute;
+    margin-left:100px;
+    top:325px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:450px;
+    top:325px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+
+
+<div><button name="mm4"
+            value="True"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; position: absolute; top:350px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+    <p id="pc1"  style="line-height: 70%;">
+     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta4 }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
+    <p id="linea1"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
+    <p id="linea2" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
+    </button>
+    <button name="mm4"
+            value="False"
+            style="text-align: left; background-color: {{ Constants.mmbcolor }}; position: absolute; top:350px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+        <p id="pc2" style="line-height: 70%;">
+             <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb4 }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
+    <p id="lineb1"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
+    <p id="lineb2" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
+    </button>
+</div>
+        <div style="
+    position: absolute;
+    margin-left:100px;
+    top:475px;
+    width:340px;
+    text-align: left
+    ">
+    <p id="linea3"  style="visibility: hidden">
+       Among {{ player.samplesizemma4 }} random sample draws from Money Machine A, {{ player.proboptiona4u }} were {{ amounta4 }}¢ and {{ player.proboptiona4d }} were 0¢.
+    </p>
+</div>
+        <div style="
+    position: absolute;
+    margin-left:100px;
+    top:475px;
+    width:340px;
+    text-align: left
+    ">
+    <p id="linea4"  style="visibility: hidden">{{player.texta4}}
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:450px;
+    top:475px;
+    width:340px;
+    text-align: left
+    ">
+    <p id="lineb3"  style="visibility: hidden">
+       Among {{ player.samplesizemmb4 }} random sample draws from Money Machine B, {{ player.proboptionb4u }} were {{ amountb4 }}¢ and {{ player.proboptionb4d }} were 0¢.
+    </p>
+</div>
+
+    <div style="
+    position: absolute;
+    margin-left:450px;
+    top:475px;
+    width:340px;
+    text-align: left
+    ">
+    <p id="lineb4"  style="visibility: hidden">{{player.textb4}}
+    </p>
+</div>
+{% endblock %}
+
+
+
+{% block scripts %}
+<script>
+
+
+var proba = {{ proba1|json }};
+var probb = {{ probb1|json }};
+var realprobb = {{ realprobb|json }};
+var linea1 = document.getElementById("linea1");
+var linea2 = document.getElementById("linea2");
+var lineb1 = document.getElementById("lineb1");
+var lineb2 = document.getElementById("lineb2");
+var linea3 = document.getElementById("linea3");
+var linea4 = document.getElementById("linea4");
+var lineb3 = document.getElementById("lineb3");
+var lineb4 = document.getElementById("lineb4");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (realprobb == 1) {
+   linea1.style.visibility = "visible";
+   linea2.style.visibility = "visible";
+   linea3.style.visibility = "visible";
+   lineb4.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb1.style.visibility = "visible";
+   lineb2.style.visibility = "visible";
+   lineb3.style.visibility = "visible";
+   linea4.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+
+</script>
+
+
+{% endblock %}

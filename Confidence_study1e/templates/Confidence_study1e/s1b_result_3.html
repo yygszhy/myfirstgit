@@ -1,0 +1,127 @@
+{% extends "global/Page.html" %}
+{% load otree_tags staticfiles %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="instructions well well-lg" style="position:absolute; top:150px;width: 900px; ">
+
+    <p>
+        <strong>{{ payoffpair }}</strong> was randomly selected. You chose <strong>Money Machine {{ payoffpairaorb }}</strong>.
+        You can now play your money machine by clicking on the “Determine Outcome” button.
+    </p>
+
+</div>
+
+<div style="
+    position: absolute;
+    margin-left:100px;
+    top:260px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:450px;
+    top:260px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+
+<div><button name="payoff_choicea"
+            value="True" Type="button" class="no-click"
+            style="text-align: left;background-color: {{ Constants.mmacolor }}; opacity: {{ player.payoffopacitya }};position: absolute; top:290px;
+            height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            <p id="pc1" style="line-height: 70%;">
+            <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ payoffa }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ payoff_probau }}</p>
+    <p id="linea1"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
+    <p id="linea2" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ payoff_probad }}</p>
+    </button>
+    <button name="payoff_choiceb"
+            value="False" Type="button" class="no-click"
+            style="text-align: left;background-color: {{ Constants.mmbcolor }}; opacity: {{ player.payoffopacityb }};position: absolute; top:290px;
+            height: 100px; width: 340px;font-size: 15px; margin-left:450px">
+                    <p id="pc2" style="line-height: 70%;">
+            <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ payoffb }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ payoff_probbu }}</p>
+    <p id="lineb1"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
+    <p id="lineb2" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ payoff_probbd }}</p>
+    </button>
+</div>
+
+
+<div>
+    <P>
+
+
+    </P>
+<button id="show" Type="button" root, command=oneclick
+            style="display:inline-block; margin-left:260px;
+            background-color: rgb(255,255,255); margin-left:250px; position: absolute; top:450px;
+            height: 30px; width: 300px; font-size: 15px; font-weight: bold;">
+    Determine Outcome
+</button>
+</div>
+
+<div class="outcome" style="padding: 50px; display: none;position: absolute; top:460px;">
+    The outcome from your money machine is <strong>{{ payoff }}¢</strong>.
+    Please click on the “Next” button.
+</div>
+
+
+<button class="otree-next-button btn btn-primary next-button" style="position:absolute; top:550px">Next</button>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "Confidence_study1e/jquery-3.2.1.js" %}"></script>
+<script>
+
+
+var realprobb = {{ realprobb|json }};
+var linea1 = document.getElementById("linea1");
+var linea2 = document.getElementById("linea2");
+var lineb1 = document.getElementById("lineb1");
+var lineb2 = document.getElementById("lineb2");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (realprobb == 1) {
+   linea1.style.visibility = "visible";
+   linea2.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb1.style.visibility = "visible";
+   lineb2.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+    $(document).ready(function(){
+         $("#show").click(function(){
+            $('.outcome').slideDown("slow");
+            $(this).prop('disabled', true);
+         });
+    });
+</script>
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .no-click {
+    pointer-events: none;
+}
+</style>
+
+
+{% endblock %}

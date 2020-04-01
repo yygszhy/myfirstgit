@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.gender with label="Please indicate your gender" %}
+    {% formfield player.age with label="Please enter your age" %}
+    {% next_button %}
+
+{% endblock %}

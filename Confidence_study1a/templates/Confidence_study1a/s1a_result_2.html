@@ -1,0 +1,109 @@
+{% extends "global/Page.html" %}
+{% load otree_tags staticfiles %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="instructions well well-lg"  style="position:absolute; top:120px;width: 900px; ">
+
+    <p>
+        <strong>{{ payoffpair }}</strong> was randomly selected. You chose <strong> Money Machine {{ payoffpairaorb }}</strong>.
+        The money machine has a fixed outcome of <strong>{{ payoff }}¢</strong>. It will be automatically added to your total payoff.
+    </p>
+    <p>
+        Please click on the “Next” button to the last page.
+    </p>
+
+</div>
+
+<div style="
+    position: absolute;
+    margin-left:100px;
+    top:280px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:420px;
+    top:280px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+
+<div><button name="payoff_choicea"
+            value="True" Type="button" class="no-click"
+            style="text-align: left;background-color: {{ Constants.mmacolor }}; opacity: {{ player.payoffopacitya }};
+            position: absolute; top:310px; height: 100px; width: 300px; font-size: 15px; margin-left:100px">
+
+            <p id="pc1" style="line-height: 70%;">
+    <p align="right" style="margin-right:100px; line-height: 70%; ">{{ payoffmma }}¢
+    <p id="linea" align="right" style="margin-right:100px;   visibility: hidden;line-height: 70%; "> 0¢
+    </button>
+    <button name="payoff_choiceb"
+            value="False" Type="button" class="no-click"
+            style="text-align: left;background-color: {{ Constants.mmbcolor }}; opacity: {{ player.payoffopacityb }};
+            position: absolute; top:310px; height: 100px; width: 300px; font-size: 15px; margin-left:420px">
+                    <p id="pc2" style="line-height: 70%;">
+    <p align="right" style="margin-right:100px; line-height: 70%; ">{{ payoffmmb }}¢
+    <p id="lineb" align="right" style="margin-right:100px;   visibility: hidden;line-height: 70%; "> 0¢
+    </button>
+</div>
+
+
+
+
+
+<button class="otree-next-button btn btn-primary next-button" style="position:absolute; top:420px">Next</button>
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .no-click {
+    pointer-events: none;
+}
+</style>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+<script src="{% static "Confidence_study1a/jquery-3.2.1.js" %}"></script>
+<script>
+
+var probb = {{ payoffprobb|json }};
+
+
+var linea = document.getElementById("linea");
+var lineb = document.getElementById("lineb");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (probb == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+
+</script>
+
+
+{% endblock %}
+
+

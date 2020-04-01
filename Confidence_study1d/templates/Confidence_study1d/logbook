@@ -1,0 +1,5 @@
+Logbook - Study 1d
+26.08.2017
+yoking works - read csv file from another folder ('yoking/yoking.csv')
+requirement: Number of participants in csv file is the same with study 1b, 1c and 1d
+yoking folder is the same path with app folder

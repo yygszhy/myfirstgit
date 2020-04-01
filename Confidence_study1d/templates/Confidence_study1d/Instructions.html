@@ -1,0 +1,43 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block title %}
+<div style="text-align: center">Instructions</div>
+{% endblock %}
+
+{% block content %}
+<div class="instructions well well-lg">
+
+    <p>
+        In this experiment you are asked to choose from pairs of money machines. Your take-home money depends on your choices.
+        Each money machine's possible outcomes are clearly stated. They can be positive as well as negative.
+        Sometimes they are certain, and at other times the probabilities of the outcomes are unknown.
+        In those unknown cases, any probability is just as likely as any other.
+    </p>
+
+    <p>
+        To help you choose a money machine, we provide you with the record of previous plays at each machine: these are randomly drawn samples.
+        When you are ready to make a binding choice, please click on your preferred money machine.<br>
+        We will offer you a statistical tool to aid your decision making. There is an illustration on the next page.
+    </p>
+
+    <p>
+        In total, there are {{Constants.num_problemsets}} pairs of money machines.
+    </p>
+
+    <p>
+        After you have made all your choices, we will randomly select one pair of money machines and play out your choices for that pair.
+        This means you should consider each decision as if it were your only one.
+        The outcome from your chosen money machine will be added to a show-up fee of ${{Constants.showupfee}},
+        which together make up the total payment you receive at the end of the experiment.
+        Therefore, the total payment you receive at the end can be bigger as well as smaller than ${{Constants.showupfee}}.
+    </p>
+
+    <p>
+        Good luck.
+    </p>
+
+</div>
+
+    {% next_button %}
+{% endblock %}

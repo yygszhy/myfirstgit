@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+<div style="text-align: center">Points Machine Pair 10/{{Constants.num_problemsets}}</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg">
+
+    <p>
+        Thank you. Your choice of <strong>Points Machine {{ player.choice10 }}</strong> was recorded.
+        Please click on the "Next" button to finish the game.
+    </p>
+
+</div>
+
+
+    {% next_button %}
+
+{% endblock %}

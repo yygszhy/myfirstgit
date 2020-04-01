@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading" style="font-size: 20px">
+        Instructions
+    </h3>
+
+    <p>In this experiment you are asked to choose among pairs of money machines. Your take-home money depends on your choices.</p>
+
+    <p>Each money machine has two possible outcomes, either €0|€32 or €0|€3.</p>
+
+    <p>There are two stages. In Stage I, please indicate the maximum proportion of bad outcomes (€0)
+        you are willing to tolerate before switching from one money machine to the other.</p>
+
+    <p>In Stage II, you receive pre-drawn samples for each money machine.
+        When you are ready to make a binding choice, please click on your preferred money machine.
+        There are {{Constants.num_problemsets}} pairs of money machines in Stage II. </p>
+
+    <p>After your have made all your choices, we will randomly select one of your decision scenarios for payoff.
+        This means you should consider each decision as if it were your only one.
+        If Stage I is selected, we will randomly select a pair of money machines and then let you play the one you said you would want to play.
+        If a Stage II decision is selected, we will let you play the money machine you selected.
+        The outcome from your chosen money machine will be added to a show-up fee of €{{Constants.showupfee}},
+        which together make up the total payment you receive at the end of the experiment.</p>
+
+    <p>Good luck.</p>
+
+</div>
+
+    {% next_button %}
+{% endblock %}

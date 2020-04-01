@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+{% load staticfiles %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="instructions well well-lg">
+
+    <p>
+        Thank you for participating.
+
+
+    </p>
+
+    <p>
+
+        Your initial endowment is <strong>{{ Constants.showupfee }} points</strong>.
+
+
+    </p>
+
+    <p>
+
+        Your outcome from the points machine is <strong>{{ payoff }} point(s)</strong>.
+
+
+    </p>
+
+    <p>
+
+        Your total points are <strong>{{ totalpayoff }}</strong>.
+
+    </p>
+
+    <p>
+        Your total points determine your chances of winning the lottery.
+
+    </p>
+
+    <p>
+
+        Please click on the “Next” button to proceed to the lottery.
+
+
+    </p>
+
+</div>
+ {% next_button %}
+{% endblock %}

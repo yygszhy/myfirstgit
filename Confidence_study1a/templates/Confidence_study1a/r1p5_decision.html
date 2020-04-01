@@ -1,0 +1,413 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+<div style="text-align: center">Money Machine Pair 5/{{Constants.num_problemsets}}</div>
+<div style="text-align: center">Decision Stage</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg"  style="position:absolute; top:200px;width: 900px;">
+
+    <p>
+        Please make a binding choice by clicking on your preferred money machine.
+    </p>
+</div>
+
+<div style="
+    position: absolute;
+    margin-left:100px;
+    top:320px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:420px;
+    top:320px;
+    width:300px;
+    text-align: center
+    ">
+    <p>
+       Money Machine B
+    </p>
+</div>
+
+<div><button name="mm5" value="True"
+            style="outline: grey solid 5px; text-align: left; background-color: {{ Constants.mmacolor }};
+            position: absolute; top:350px; height: 100px; width: 300px; font-size: 15px; margin-left:100px">
+        <p id="pc1" style="line-height: 70%;">
+    <p align="right" style="margin-right:100px;line-height: 70%; ">{{ amounta5 }}¢
+    <p id="linea" align="right" style="margin-right:100px;  visibility: hidden;line-height: 70%; "> 0¢
+    </button>
+    <button name="mm5" value="False"
+            style="outline: grey solid 5px; text-align: left; background-color: {{ Constants.mmbcolor }}; position: absolute; top:350px; height: 100px; width: 300px; font-size: 15px; margin-left:420px">
+                   <p id="pc2" style="line-height: 70%;">
+        <p align="right" style="margin-right:100px;line-height: 70%; ">{{ amountb5 }}¢
+    <p id="lineb" align="right" style="margin-right:100px; visibility: hidden; line-height: 70%; "> 0¢
+    </button>
+    <p>
+
+
+    </p>
+</div>
+
+<div class="container1" style="
+    border: hidden;
+    position:absolute;
+    top:450px;
+    width: 280px;
+    height: 500px;
+    margin-left: 100px;
+    padding: 10px;
+    display:inline-block">
+    <p>
+        {{ player.shorttext5a }}
+    </p>
+
+
+        <button  class="toAdd" id="a1s1"></button>
+        <button  class="toAdd" id="a1s2"></button>
+        <button  class="toAdd" id="a1s3"></button>
+        <button  class="toAdd" id="a1s4"></button>
+        <button  class="toAdd" id="a1s5"></button>
+        <button  class="toAdd" id="a1s6"></button>
+        <button  class="toAdd" id="a1s7"></button>
+        <button  class="toAdd" id="a1s8"></button>
+        <button  class="toAdd" id="a1s9"></button>
+        <button  class="toAdd" id="a1s10"></button>
+        <button  class="toAdd" id="a1s11"></button>
+        <button  class="toAdd" id="a1s12"></button>
+        <button  class="toAdd" id="a1s13"></button>
+        <button  class="toAdd" id="a1s14"></button>
+        <button  class="toAdd" id="a1s15"></button>
+        <button  class="toAdd" id="a1s16"></button>
+        <button  class="toAdd" id="a1s17"></button>
+        <button  class="toAdd" id="a1s18"></button>
+        <button  class="toAdd" id="a1s19"></button>
+        <button  class="toAdd" id="a1s20"></button>
+        <button  class="toAdd" id="a1s21"></button>
+        <button  class="toAdd" id="a1s22"></button>
+        <button  class="toAdd" id="a1s23"></button>
+        <button  class="toAdd" id="a1s24"></button>
+        <button  class="toAdd" id="a1s25"></button>
+        <button  class="toAdd" id="a1s26"></button>
+        <button  class="toAdd" id="a1s27"></button>
+        <button  class="toAdd" id="a1s28"></button>
+        <button  class="toAdd" id="a1s29"></button>
+        <button  class="toAdd" id="a1s30"></button>
+        <button  class="toAdd" id="a1s31"></button>
+        <button  class="toAdd" id="a1s32"></button>
+        <button  class="toAdd" id="a1s33"></button>
+        <button  class="toAdd" id="a1s34"></button>
+        <button  class="toAdd" id="a1s35"></button>
+        <button  class="toAdd" id="a1s36"></button>
+        <button  class="toAdd" id="a1s37"></button>
+        <button  class="toAdd" id="a1s38"></button>
+        <button  class="toAdd" id="a1s39"></button>
+        <button  class="toAdd" id="a1s40"></button>
+        <button  class="toAdd" id="a1s41"></button>
+        <button  class="toAdd" id="a1s42"></button>
+        <button  class="toAdd" id="a1s43"></button>
+        <button  class="toAdd" id="a1s44"></button>
+        <button  class="toAdd" id="a1s45"></button>
+        <button  class="toAdd" id="a1s46"></button>
+        <button  class="toAdd" id="a1s47"></button>
+        <button  class="toAdd" id="a1s48"></button>
+        <button  class="toAdd" id="a1s49"></button>
+        <button  class="toAdd" id="a1s50"></button>
+             <button  class="toAdd" id="a1s51"></button>
+        <button  class="toAdd" id="a1s52"></button>
+        <button  class="toAdd" id="a1s53"></button>
+        <button  class="toAdd" id="a1s54"></button>
+        <button  class="toAdd" id="a1s55"></button>
+        <button  class="toAdd" id="a1s56"></button>
+        <button  class="toAdd" id="a1s57"></button>
+        <button  class="toAdd" id="a1s58"></button>
+        <button  class="toAdd" id="a1s59"></button>
+        <button  class="toAdd" id="a1s60"></button>
+        <button  class="toAdd" id="a1s61"></button>
+        <button  class="toAdd" id="a1s62"></button>
+        <button  class="toAdd" id="a1s63"></button>
+        <button  class="toAdd" id="a1s64"></button>
+        <button  class="toAdd" id="a1s65"></button>
+        <button  class="toAdd" id="a1s66"></button>
+        <button  class="toAdd" id="a1s67"></button>
+        <button  class="toAdd" id="a1s68"></button>
+        <button  class="toAdd" id="a1s69"></button>
+        <button  class="toAdd" id="a1s70"></button>
+        <button  class="toAdd" id="a1s71"></button>
+        <button  class="toAdd" id="a1s72"></button>
+        <button  class="toAdd" id="a1s73"></button>
+        <button  class="toAdd" id="a1s74"></button>
+        <button  class="toAdd" id="a1s75"></button>
+        <button  class="toAdd" id="a1s76"></button>
+        <button  class="toAdd" id="a1s77"></button>
+        <button  class="toAdd" id="a1s78"></button>
+        <button  class="toAdd" id="a1s79"></button>
+        <button  class="toAdd" id="a1s80"></button>
+        <button  class="toAdd" id="a1s81"></button>
+        <button  class="toAdd" id="a1s82"></button>
+        <button  class="toAdd" id="a1s83"></button>
+        <button  class="toAdd" id="a1s84"></button>
+        <button  class="toAdd" id="a1s85"></button>
+        <button  class="toAdd" id="a1s86"></button>
+        <button  class="toAdd" id="a1s87"></button>
+        <button  class="toAdd" id="a1s88"></button>
+        <button  class="toAdd" id="a1s89"></button>
+        <button  class="toAdd" id="a1s90"></button>
+        <button  class="toAdd" id="a1s91"></button>
+        <button  class="toAdd" id="a1s92"></button>
+        <button  class="toAdd" id="a1s93"></button>
+        <button  class="toAdd" id="a1s94"></button>
+        <button  class="toAdd" id="a1s95"></button>
+        <button  class="toAdd" id="a1s96"></button>
+        <button  class="toAdd" id="a1s97"></button>
+        <button  class="toAdd" id="a1s98"></button>
+        <button  class="toAdd" id="a1s99"></button>
+        <button  class="toAdd" id="a1s100"></button>
+
+
+
+</div>
+
+<div class="container2" style="border: hidden;
+    position:absolute;
+    top:450px;
+    width: 280px;
+    height: 500px;
+    margin-left: 420px;
+    padding: 10px;
+    display:inline-block">
+    <p>
+        {{ player.shorttext5b }}
+    </p>
+
+
+        <button class="toAdd2" id="b1s1"></button>
+        <button class="toAdd2" id="b1s2"></button>
+        <button class="toAdd2" id="b1s3"></button>
+        <button class="toAdd2" id="b1s4"></button>
+        <button class="toAdd2" id="b1s5"></button>
+        <button class="toAdd2" id="b1s6"></button>
+        <button class="toAdd2" id="b1s7"></button>
+        <button class="toAdd2" id="b1s8"></button>
+        <button class="toAdd2" id="b1s9"></button>
+        <button class="toAdd2" id="b1s10"></button>
+        <button class="toAdd2" id="b1s11"></button>
+        <button class="toAdd2" id="b1s12"></button>
+        <button class="toAdd2" id="b1s13"></button>
+        <button class="toAdd2" id="b1s14"></button>
+        <button class="toAdd2" id="b1s15"></button>
+        <button class="toAdd2" id="b1s16"></button>
+        <button class="toAdd2" id="b1s17"></button>
+        <button class="toAdd2" id="b1s18"></button>
+        <button class="toAdd2" id="b1s19"></button>
+        <button class="toAdd2" id="b1s20"></button>
+        <button class="toAdd2" id="b1s21"></button>
+        <button class="toAdd2" id="b1s22"></button>
+        <button class="toAdd2" id="b1s23"></button>
+        <button class="toAdd2" id="b1s24"></button>
+        <button class="toAdd2" id="b1s25"></button>
+        <button class="toAdd2" id="b1s26"></button>
+        <button class="toAdd2" id="b1s27"></button>
+        <button class="toAdd2" id="b1s28"></button>
+        <button class="toAdd2" id="b1s29"></button>
+        <button class="toAdd2" id="b1s30"></button>
+        <button class="toAdd2" id="b1s31"></button>
+        <button class="toAdd2" id="b1s32"></button>
+        <button class="toAdd2" id="b1s33"></button>
+        <button class="toAdd2" id="b1s34"></button>
+        <button class="toAdd2" id="b1s35"></button>
+        <button class="toAdd2" id="b1s36"></button>
+        <button class="toAdd2" id="b1s37"></button>
+        <button class="toAdd2" id="b1s38"></button>
+        <button class="toAdd2" id="b1s39"></button>
+        <button class="toAdd2" id="b1s40"></button>
+        <button class="toAdd2" id="b1s41"></button>
+        <button class="toAdd2" id="b1s42"></button>
+        <button class="toAdd2" id="b1s43"></button>
+        <button class="toAdd2" id="b1s44"></button>
+        <button class="toAdd2" id="b1s45"></button>
+        <button class="toAdd2" id="b1s46"></button>
+        <button class="toAdd2" id="b1s47"></button>
+        <button class="toAdd2" id="b1s48"></button>
+        <button class="toAdd2" id="b1s49"></button>
+        <button class="toAdd2" id="b1s50"></button>
+        <button class="toAdd2" id="b1s51"></button>
+        <button class="toAdd2" id="b1s52"></button>
+        <button class="toAdd2" id="b1s53"></button>
+        <button class="toAdd2" id="b1s54"></button>
+        <button class="toAdd2" id="b1s55"></button>
+        <button class="toAdd2" id="b1s56"></button>
+        <button class="toAdd2" id="b1s57"></button>
+        <button class="toAdd2" id="b1s58"></button>
+        <button class="toAdd2" id="b1s59"></button>
+        <button class="toAdd2" id="b1s60"></button>
+        <button class="toAdd2" id="b1s61"></button>
+        <button class="toAdd2" id="b1s62"></button>
+        <button class="toAdd2" id="b1s63"></button>
+        <button class="toAdd2" id="b1s64"></button>
+        <button class="toAdd2" id="b1s65"></button>
+        <button class="toAdd2" id="b1s66"></button>
+        <button class="toAdd2" id="b1s67"></button>
+        <button class="toAdd2" id="b1s68"></button>
+        <button class="toAdd2" id="b1s69"></button>
+        <button class="toAdd2" id="b1s70"></button>
+        <button class="toAdd2" id="b1s71"></button>
+        <button class="toAdd2" id="b1s72"></button>
+        <button class="toAdd2" id="b1s73"></button>
+        <button class="toAdd2" id="b1s74"></button>
+        <button class="toAdd2" id="b1s75"></button>
+        <button class="toAdd2" id="b1s76"></button>
+        <button class="toAdd2" id="b1s77"></button>
+        <button class="toAdd2" id="b1s78"></button>
+        <button class="toAdd2" id="b1s79"></button>
+        <button class="toAdd2" id="b1s80"></button>
+        <button class="toAdd2" id="b1s81"></button>
+        <button class="toAdd2" id="b1s82"></button>
+        <button class="toAdd2" id="b1s83"></button>
+        <button class="toAdd2" id="b1s84"></button>
+        <button class="toAdd2" id="b1s85"></button>
+        <button class="toAdd2" id="b1s86"></button>
+        <button class="toAdd2" id="b1s87"></button>
+        <button class="toAdd2" id="b1s88"></button>
+        <button class="toAdd2" id="b1s89"></button>
+        <button class="toAdd2" id="b1s90"></button>
+        <button class="toAdd2" id="b1s91"></button>
+        <button class="toAdd2" id="b1s92"></button>
+        <button class="toAdd2" id="b1s93"></button>
+        <button class="toAdd2" id="b1s94"></button>
+        <button class="toAdd2" id="b1s95"></button>
+        <button class="toAdd2" id="b1s96"></button>
+        <button class="toAdd2" id="b1s97"></button>
+        <button class="toAdd2" id="b1s98"></button>
+        <button class="toAdd2" id="b1s99"></button>
+        <button class="toAdd2" id="b1s100"></button>
+
+
+</div>
+
+
+
+{% endblock %}
+
+
+{% block styles %}
+<!-- define a style -->
+<style type="text/css">
+.toAdd {
+    display:inline-block;
+    background-color: white;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    pointer-events: none;
+}
+.toAdd2 {
+    display:inline-block;
+    background-color: white;
+    width: 45px;
+    padding: 0.1px;
+    margin: 1px;
+    font-size: 10px;
+    text-align: center;
+    pointer-events: none;
+}
+</style>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "Confidence_study1a/jquery-3.2.1.js" %}"></script>
+<script>
+
+var samplea5str = {{ samplea5|json }};
+var samplea5 = samplea5str.split(",");
+var sampleb5str = {{ sampleb5|json }};
+var sampleb5 = sampleb5str.split(",");
+var num_samplea5 = {{ num_samplea5|json }};
+var num_sampleb5 = {{ num_sampleb5|json }};
+var bo5 = {{ bo5|json }};
+var bo5str = bo5.toString();
+var euro = "$";
+var cent = "¢";
+var probb = {{ probb5|json }};
+
+for(var i = 0; i < samplea5.length; i++){
+    document.getElementById("a1s" + (i+1)).innerHTML = samplea5[i].concat(cent);
+}
+
+for(var i = 0; i < sampleb5.length; i++){
+    document.getElementById("b1s" + (i+1)).innerHTML = sampleb5[i].concat(cent);
+}
+
+
+
+var showsamplea = document.getElementsByClassName('toAdd');
+var i = num_samplea5;
+for (var i; i < showsamplea.length; i++) {
+    showsamplea[i].style.display = 'none';
+}
+
+
+var showsampleb = document.getElementsByClassName('toAdd2');
+var j = num_sampleb5;
+for (var j; j < showsampleb.length; j++) {
+    showsampleb[j].style.display = 'none';
+}
+
+var samplea = document.getElementsByClassName('toAdd');
+var i = 0;
+    for(var i=0; i<samplea.length; i++) {
+       if (samplea[i].innerHTML.slice(0, -1) == bo5 || samplea[i].innerHTML.slice(0, -1) < -0.5) {
+           samplea[i].style.backgroundColor = "lightblue";
+        } else {
+           samplea[i].style.backgroundColor = "white";
+    }
+    };
+
+var sampleb = document.getElementsByClassName('toAdd2');
+var i = 0;
+    for(var i=0; i<sampleb.length; i++) {
+       if (sampleb[i].innerHTML.slice(0, -1) == bo5 || sampleb[i].innerHTML.slice(0, -1) < -0.5) {
+           sampleb[i].style.backgroundColor = "orange";
+        } else {
+           sampleb[i].style.backgroundColor = "white";
+    }
+    };
+
+
+var linea = document.getElementById("linea");
+var lineb = document.getElementById("lineb");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (probb == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+</script>
+
+
+{% endblock %}

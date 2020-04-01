@@ -1,0 +1,501 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+<div style="text-align: center">Your chosen points machines</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg" style="position:absolute; top:180px;width: 900px; ">
+
+    <p>
+        Your game is over. Your decisions for each pair are shown as below.
+        Please click on the “Next” button to have one points machine randomly selected for your outcome.
+    </p>
+</div>
+
+<div style="
+    margin-left:100px;
+    font-size: 20px;
+    position:absolute;
+    top:290px
+    ">
+    <p>
+       Pair 1, you chose Points Machine {{ player.choice1 }}
+    </p>
+</div>
+
+<div><button name="mm11a_choice" class="no-click"
+            value="True" Type="button"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya1 }};
+            position: absolute; top:330px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+    <p id="pca1" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta1 }} with probability {{ player.proboptiona1u }}
+    <p id="linea1" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona1d }}
+    </button>
+    <button name="mm11b_choice"
+            value="False" Type="button" class="no-click"
+            style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb1 }};
+            position: absolute; top:330px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+                <p id="pcb1" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb1 }} with probability {{ player.proboptionb1u }}
+    <p id="lineb1" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb1d }}
+    </button>
+</div>
+
+<div style="
+    margin-left:100px;
+    font-size: 20px;
+    position: absolute; top:470px;
+    ">
+    <p>
+       Pair 2, you chose Points Machine {{ player.choice2 }}
+    </p>
+</div>
+
+<div><button name="mm12a_choice"
+            value="True" Type="button" class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya2 }};
+             position: absolute; top:510px; height: 100px; width: 340px; font-size: 15px;  margin-left:100px">
+        <p id="pca2" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta2 }} with probability {{ player.proboptiona2u }}
+    <p id="linea2" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona2d }}
+    </button>
+    <button name="mm12b_choice"
+            value="False" Type="button" class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb2 }};
+            position: absolute; top:510px; height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
+                        <p id="pcb2" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb2 }} with probability {{ player.proboptionb2u }}
+    <p id="lineb2" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb2d }}
+    </button>
+</div>
+
+<div style="
+    margin-left:100px;
+    font-size: 20px;
+    position: absolute; top:650px;
+    ">
+    <p>
+       Pair 3, you chose Points Machine {{ player.choice3 }}
+    </p>
+</div>
+
+<div><button name="mm13a_choice"
+            value="True" Type="button"  class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya3 }};
+            position: absolute; top:690px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca3" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta3 }} with probability {{ player.proboptiona3u }}
+    <p id="linea3" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona3d }}
+    </button>
+    <button name="mm13b_choice"
+            value="False" Type="button" class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb3 }};
+            position: absolute; top:690px; height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
+                        <p id="pcb3" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb3 }} with probability {{ player.proboptionb3u }}
+    <p id="lineb3" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb3d }}
+    </button>
+</div>
+
+
+
+<div style="
+    margin-left:100px;
+    font-size: 20px;
+    position: absolute; top:830px;
+    ">
+    <p>
+       Pair 4, you chose Points Machine {{ player.choice4 }}
+    </p>
+</div>
+
+<div><button name="mm14a_choice"
+            value="True" Type="button"  class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmacolor  }}; opacity: {{ player.opacitya4 }};
+            position: absolute; top:870px;height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca4" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta4 }} with probability {{ player.proboptiona4u }}
+    <p id="linea4" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona4d }}
+    </button>
+    <button name="mm14b_choice"
+            value="False" Type="button"  class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb4 }};
+            position: absolute; top:870px;height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
+                        <p id="pcb4" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb4 }} with probability {{ player.proboptionb4u }}
+    <p id="lineb4" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb4d }}
+    </button>
+</div>
+
+<div style="
+    margin-left:100px;
+    font-size: 20px;
+    position: absolute; top:1010px;
+    ">
+    <p>
+       Pair 5, you chose Points Machine {{ player.choice5 }}
+    </p>
+</div>
+
+<div><button name="mm15a_choice"
+            value="True" Type="button" class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya5 }};
+            position: absolute; top:1050px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca5" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta5 }} with probability {{ player.proboptiona5u }}
+    <p id="linea5" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona5d }}
+    </button>
+    <button name="mm15b_choice"
+            value="False" Type="button" class="no-click"
+            style="text-align: left; background-color: {{ Constants.mmbcolor }}; opacity: {{ player.opacityb5 }};
+            position: absolute; top:1050px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+        <p id="pcb5" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb5 }} with probability {{ player.proboptionb5u }}
+    <p id="lineb5" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb5d }}
+    </button>
+</div>
+
+
+<div style="
+    margin-left:100px;
+    font-size: 20px; position: absolute; top:1190px;
+    ">
+    <p>
+       Pair 6, you chose Points Machine {{ player.choice6 }}
+    </p>
+</div>
+
+<div><button name="mm16a_choice" class="no-click"
+            value="True" Type="button"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya6 }};
+            position: absolute; top:1230px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca6" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta6 }} with probability {{ player.proboptiona6u }}
+    <p id="linea6" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona6d }}
+    </button>
+    <button name="mm16b_choice"
+            value="False" Type="button" class="no-click"
+            style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb6 }};
+            position: absolute; top:1230px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+                    <p id="pcb6" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb6 }} with probability {{ player.proboptionb6u }}
+    <p id="lineb6" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb6d }}
+    </button>
+</div>
+
+
+<div style="position: absolute; top:1370px;
+    margin-left:100px;
+    font-size: 20px;
+    ">
+    <p>
+       Pair 7, you chose Points Machine {{ player.choice7 }}
+    </p>
+</div>
+
+<div><button name="mm17a_choice" class="no-click"
+            value="True" Type="button"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya7 }};
+            position: absolute; top:1410px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca7" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta7 }} with probability {{ player.proboptiona7u }}
+    <p id="linea7" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona7d }}
+    </button>
+    <button name="mm17b_choice"
+            value="False" Type="button" class="no-click"
+            style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb7 }};
+            position: absolute; top:1410px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+                        <p id="pcb7" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb7 }} with probability {{ player.proboptionb7u }}
+    <p id="lineb7" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb7d }}
+    </button>
+</div>
+
+
+<div style="position: absolute; top:1550px;
+    margin-left:100px;
+    font-size: 20px;
+    ">
+    <p>
+       Pair 8, you chose Points Machine {{ player.choice8 }}
+    </p>
+</div>
+
+<div><button name="mm18a_choice" class="no-click"
+            value="True" Type="button"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya8 }};
+            position: absolute; top:1590px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca8" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta8 }} with probability {{ player.proboptiona8u }}
+    <p id="linea8" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona8d }}
+    </button>
+    <button name="mm18b_choice"
+            value="False" Type="button" class="no-click"
+            style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb8 }};
+            position: absolute; top:1590px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+                        <p id="pcb8" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb8 }} with probability {{ player.proboptionb8u }}
+    <p id="lineb8" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb8d }}
+    </button>
+</div>
+
+
+<div style="position: absolute; top:1730px;
+    margin-left:100px;
+    font-size: 20px;
+    ">
+    <p>
+       Pair 9, you chose Points Machine {{ player.choice9 }}
+    </p>
+</div>
+
+<div><button name="mm19a_choice" class="no-click"
+            value="True" Type="button"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya9 }};
+            position: absolute; top:1770px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca9" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta9 }} with probability {{ player.proboptiona9u }}
+    <p id="linea9" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona9d }}
+    </button>
+    <button name="mm19b_choice"
+            value="False" Type="button" class="no-click"
+            style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb9 }};
+            position: absolute; top:1770px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+                        <p id="pcb9" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb9 }} with probability {{ player.proboptionb9u }}
+    <p id="lineb9" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb9d }}
+    </button>
+</div>
+
+
+
+<div style="
+    margin-left:100px;
+    font-size: 20px;
+    position: absolute; top:1910px;
+    ">
+    <p>
+       Pair 10, you chose Points Machine {{ player.choice10 }}
+    </p>
+</div>
+
+<div><button name="mm110a_choice" class="no-click"
+            value="True" Type="button"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya10 }};
+            position: absolute; top:1950px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+        <p id="pca10" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta10 }} with probability {{ player.proboptiona10u }}
+    <p id="linea10" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona10d }}
+    </button>
+    <button name="mm110b_choice"
+            value="False" Type="button" class="no-click"
+            style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb10 }};
+            position: absolute; top:1950px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+                        <p id="pcb10" style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb10 }} with probability {{ player.proboptionb10u }}
+    <p id="lineb10" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb10d }}
+    </button>
+</div>
+
+
+
+<button class="otree-next-button btn btn-primary next-button" style="position:absolute; top:2120px">Next</button>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script type="text/javascript">
+
+var probb1 = {{ probb1|json }};
+var probb2 = {{ probb2|json }};
+var probb3 = {{ probb3|json }};
+var probb4 = {{ probb4|json }};
+var probb5 = {{ probb5|json }};
+var probb6 = {{ probb6|json }};
+var probb7 = {{ probb7|json }};
+var probb8 = {{ probb8|json }};
+var probb9 = {{ probb9|json }};
+var probb10 = {{ probb10|json }};
+var realprobb1 = {{ realprobb1|json }};
+var realprobb2 = {{ realprobb2|json }};
+var realprobb3 = {{ realprobb3|json }};
+var realprobb4 = {{ realprobb4|json }};
+var realprobb5 = {{ realprobb5|json }};
+var realprobb6 = {{ realprobb6|json }};
+var realprobb7 = {{ realprobb7|json }};
+var realprobb8 = {{ realprobb8|json }};
+var realprobb9 = {{ realprobb9|json }};
+var realprobb10 = {{ realprobb10|json }};
+
+
+
+var linea = document.getElementById("linea1");
+var lineb = document.getElementById("lineb1");
+var pc1 = document.getElementById("pca1");
+var pc2 = document.getElementById("pcb1");
+if (realprobb1 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+var linea = document.getElementById("linea2");
+var lineb = document.getElementById("lineb2");
+var pc1 = document.getElementById("pca2");
+var pc2 = document.getElementById("pcb2");
+if (realprobb2 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+var linea = document.getElementById("linea3");
+var lineb = document.getElementById("lineb3");
+var pc1 = document.getElementById("pca3");
+var pc2 = document.getElementById("pcb3");
+if (realprobb3 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+
+var linea = document.getElementById("linea4");
+var lineb = document.getElementById("lineb4");
+var pc1 = document.getElementById("pca4");
+var pc2 = document.getElementById("pcb4");
+if (realprobb4 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+var linea = document.getElementById("linea5");
+var lineb = document.getElementById("lineb5");
+var pc1 = document.getElementById("pca5");
+var pc2 = document.getElementById("pcb5");
+if (realprobb5 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+var linea = document.getElementById("linea6");
+var lineb = document.getElementById("lineb6");
+var pc1 = document.getElementById("pca6");
+var pc2 = document.getElementById("pcb6");
+if (realprobb6 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+var linea = document.getElementById("linea7");
+var lineb = document.getElementById("lineb7");
+var pc1 = document.getElementById("pca7");
+var pc2 = document.getElementById("pcb7");
+if (realprobb7 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+var linea = document.getElementById("linea8");
+var lineb = document.getElementById("lineb8");
+var pc1 = document.getElementById("pca8");
+var pc2 = document.getElementById("pcb8");
+if (realprobb8 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+
+var linea = document.getElementById("linea9");
+var lineb = document.getElementById("lineb9");
+var pc1 = document.getElementById("pca9");
+var pc2 = document.getElementById("pcb9");
+if (realprobb9 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+var linea = document.getElementById("linea10");
+var lineb = document.getElementById("lineb10");
+var pc1 = document.getElementById("pca10");
+var pc2 = document.getElementById("pcb10");
+if (realprobb10 == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+</script>
+
+{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    .no-click {
+    pointer-events: none;
+}
+</style>
+{% endblock %}
+

@@ -1,0 +1,95 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+<div style="text-align: center">Points Machine Pair 9/{{Constants.num_problemsets}}</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+div {
+    text-align: left
+}
+</style>
+
+
+<div class="instructions well well-lg" style="position:absolute; top:200px;width: 900px; ">
+
+    <p>
+       When you are ready to make a binding choice, please click on your preferred points machine.
+    </p>
+</div>
+
+<div style="
+    position: absolute;
+    margin-left:100px;
+    top:325px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Points Machine A
+    </p>
+</div>
+<div style="
+    position: absolute;
+    margin-left:450px;
+    top:325px;
+    width:340px;
+    text-align: center
+    ">
+    <p>
+       Points Machine B
+    </p>
+</div>
+
+
+<div><button name="mm9"
+            value="True"
+            style="text-align: left; background-color: {{ Constants.mmacolor }}; position: absolute; top:350px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+    <p id="pc1" style="line-height: 70%;">
+    <p style="text-indent: 120px; line-height: 70%;">{{ amounta9 }} with probability {{ player.proboptiona9u }}
+    <p id="linea" style="text-indent: 120px;  visibility: hidden; line-height: 70%;"> 0 with probability {{ player.proboptiona9d }}
+    </button>
+    <button name="mm9"
+            value="False"
+            style="text-align: left; background-color: {{ Constants.mmbcolor }}; position: absolute; top:350px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+        <p id="pc2"  style="line-height: 70%;">
+        <p style="text-indent: 120px; line-height: 70%;">{{ amountb9 }} with probability {{ player.proboptionb9u }}
+    <p id="lineb" style="text-indent: 120px; visibility: hidden;  line-height: 70%;"> 0 with probability {{ player.proboptionb9d }}
+    </button>
+</div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+<script>
+
+
+var proba = {{ proba9|json }};
+var probb = {{ probb9|json }};
+var realprobb = {{ realprobb|json }};
+var linea = document.getElementById("linea");
+var lineb = document.getElementById("lineb");
+var pc1 = document.getElementById("pc1");
+var pc2 = document.getElementById("pc2");
+if (realprobb == 1) {
+   linea.style.visibility = "visible";
+   pc1.innerHTML = "Possible outcomes:";
+   pc2.innerHTML = "Possible outcome:";
+   } else {
+   lineb.style.visibility = "visible";
+   pc2.innerHTML = "Possible outcomes:";
+   pc1.innerHTML = "Possible outcome:";
+    }
+
+
+
+
+</script>
+
+
+{% endblock %}
