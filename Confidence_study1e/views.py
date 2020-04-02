@@ -382,6 +382,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 1"
             payoffchoice = self.player.choice1()
             realprobb = realprobb1
+            payoff_samplesize_a = self.player.samplesizemma1
+            payoff_samplesize_b = self.player.samplesizemmb1
+            payoff_text_a = self.player.texta1()
+            payoff_text_b = self.player.textb1()
         elif self.player.randompayoff == 2:
             payoffa = round(self.player.amounta2)
             payoffb = round(self.player.amountb2)
@@ -392,6 +396,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 2"
             payoffchoice = self.player.choice2()
             realprobb = realprobb2
+            payoff_samplesize_a = self.player.samplesizemma2
+            payoff_samplesize_b = self.player.samplesizemmb2
+            payoff_text_a = self.player.texta2()
+            payoff_text_b = self.player.textb2()
         elif self.player.randompayoff == 3:
             payoffa = round(self.player.amounta3)
             payoffb = round(self.player.amountb3)
@@ -402,6 +410,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 3"
             payoffchoice = self.player.choice3()
             realprobb = realprobb3
+            payoff_samplesize_a = self.player.samplesizemma3
+            payoff_samplesize_b = self.player.samplesizemmb3
+            payoff_text_a = self.player.texta3()
+            payoff_text_b = self.player.textb3()
         elif self.player.randompayoff == 4:
             payoffa = round(self.player.amounta4)
             payoffb = round(self.player.amountb4)
@@ -412,6 +424,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 4"
             payoffchoice = self.player.choice4()
             realprobb = realprobb4
+            payoff_samplesize_a = self.player.samplesizemma4
+            payoff_samplesize_b = self.player.samplesizemmb4
+            payoff_text_a = self.player.texta4()
+            payoff_text_b = self.player.textb4()
         elif self.player.randompayoff == 5:
             payoffa = round(self.player.amounta5)
             payoffb = round(self.player.amountb5)
@@ -422,6 +438,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 5"
             payoffchoice = self.player.choice5()
             realprobb = realprobb5
+            payoff_samplesize_a = self.player.samplesizemma5
+            payoff_samplesize_b = self.player.samplesizemmb5
+            payoff_text_a = self.player.texta5()
+            payoff_text_b = self.player.textb5()
         elif self.player.randompayoff == 6:
             payoffa = round(self.player.amounta6)
             payoffb = round(self.player.amountb6)
@@ -432,6 +452,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 6"
             payoffchoice = self.player.choice6()
             realprobb = realprobb6
+            payoff_samplesize_a = self.player.samplesizemma6
+            payoff_samplesize_b = self.player.samplesizemmb6
+            payoff_text_a = self.player.texta6()
+            payoff_text_b = self.player.textb6()
         elif self.player.randompayoff == 7:
             payoffa = round(self.player.amounta7)
             payoffb = round(self.player.amountb7)
@@ -442,6 +466,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 7"
             payoffchoice = self.player.choice7()
             realprobb = realprobb7
+            payoff_samplesize_a = self.player.samplesizemma7
+            payoff_samplesize_b = self.player.samplesizemmb7
+            payoff_text_a = self.player.texta7()
+            payoff_text_b = self.player.textb7()
         elif self.player.randompayoff == 8:
             payoffa = round(self.player.amounta8)
             payoffb = round(self.player.amountb8)
@@ -452,6 +480,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 8"
             payoffchoice = self.player.choice8()
             realprobb = realprobb8
+            payoff_samplesize_a = self.player.samplesizemma8
+            payoff_samplesize_b = self.player.samplesizemmb8
+            payoff_text_a = self.player.texta8()
+            payoff_text_b = self.player.textb8()
         elif self.player.randompayoff == 9:
             payoffa = round(self.player.amounta9)
             payoffb = round(self.player.amountb9)
@@ -462,6 +494,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 9"
             payoffchoice = self.player.choice9()
             realprobb = realprobb9
+            payoff_samplesize_a = self.player.samplesizemma9
+            payoff_samplesize_b = self.player.samplesizemmb9
+            payoff_text_a = self.player.texta9()
+            payoff_text_b = self.player.textb9()
         elif self.player.randompayoff == 10:
             payoffa = round(self.player.amounta10)
             payoffb = round(self.player.amountb10)
@@ -472,6 +508,10 @@ class s1b_result_2(Page):
             payoffpair = "Pair 10"
             payoffchoice = self.player.choice10()
             realprobb = realprobb10
+            payoff_samplesize_a = self.player.samplesizemma10
+            payoff_samplesize_b = self.player.samplesizemmb10
+            payoff_text_a = self.player.texta10()
+            payoff_text_b = self.player.textb10()
         return {
         'payoffa': payoffa,
         'payoffb': payoffb,
@@ -483,6 +523,10 @@ class s1b_result_2(Page):
         'payoff_probad': probad,
         'payoff_probbu': probbu,
         'payoff_probbd': probbd,
+        'payoff_text_a': payoff_text_a,
+        'payoff_text_b': payoff_text_b,
+        'payoff_samplesize_a': payoff_samplesize_a,
+        'payoff_samplesize_b': payoff_samplesize_b,
         }
 
 class s1b_result_3 (Page):
@@ -513,6 +557,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 1"
             payoffchoice = self.player.choice1()
             realprobb = realprobb1
+            payoff_samplesize_a = self.player.samplesizemma1
+            payoff_samplesize_b = self.player.samplesizemmb1
+            payoff_text_a = self.player.texta1()
+            payoff_text_b = self.player.textb1()
         elif self.player.randompayoff == 2:
             payoffa = round(self.player.amounta2)
             payoffb = round(self.player.amountb2)
@@ -523,6 +571,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 2"
             payoffchoice = self.player.choice2()
             realprobb = realprobb2
+            payoff_samplesize_a = self.player.samplesizemma2
+            payoff_samplesize_b = self.player.samplesizemmb2
+            payoff_text_a = self.player.texta2()
+            payoff_text_b = self.player.textb2()
         elif self.player.randompayoff == 3:
             payoffa = round(self.player.amounta3)
             payoffb = round(self.player.amountb3)
@@ -533,6 +585,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 3"
             payoffchoice = self.player.choice3()
             realprobb = realprobb3
+            payoff_samplesize_a = self.player.samplesizemma3
+            payoff_samplesize_b = self.player.samplesizemmb3
+            payoff_text_a = self.player.texta3()
+            payoff_text_b = self.player.textb3()
         elif self.player.randompayoff == 4:
             payoffa = round(self.player.amounta4)
             payoffb = round(self.player.amountb4)
@@ -543,6 +599,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 4"
             payoffchoice = self.player.choice4()
             realprobb = realprobb4
+            payoff_samplesize_a = self.player.samplesizemma4
+            payoff_samplesize_b = self.player.samplesizemmb4
+            payoff_text_a = self.player.texta4()
+            payoff_text_b = self.player.textb4()
         elif self.player.randompayoff == 5:
             payoffa = round(self.player.amounta5)
             payoffb = round(self.player.amountb5)
@@ -553,6 +613,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 5"
             payoffchoice = self.player.choice5()
             realprobb = realprobb5
+            payoff_samplesize_a = self.player.samplesizemma5
+            payoff_samplesize_b = self.player.samplesizemmb5
+            payoff_text_a = self.player.texta5()
+            payoff_text_b = self.player.textb5()
         elif self.player.randompayoff == 6:
             payoffa = round(self.player.amounta6)
             payoffb = round(self.player.amountb6)
@@ -563,6 +627,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 6"
             payoffchoice = self.player.choice6()
             realprobb = realprobb6
+            payoff_samplesize_a = self.player.samplesizemma6
+            payoff_samplesize_b = self.player.samplesizemmb6
+            payoff_text_a = self.player.texta6()
+            payoff_text_b = self.player.textb6()
         elif self.player.randompayoff == 7:
             payoffa = round(self.player.amounta7)
             payoffb = round(self.player.amountb7)
@@ -573,6 +641,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 7"
             payoffchoice = self.player.choice7()
             realprobb = realprobb7
+            payoff_samplesize_a = self.player.samplesizemma7
+            payoff_samplesize_b = self.player.samplesizemmb7
+            payoff_text_a = self.player.texta7()
+            payoff_text_b = self.player.textb7()
         elif self.player.randompayoff == 8:
             payoffa = round(self.player.amounta8)
             payoffb = round(self.player.amountb8)
@@ -583,6 +655,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 8"
             payoffchoice = self.player.choice8()
             realprobb = realprobb8
+            payoff_samplesize_a = self.player.samplesizemma8
+            payoff_samplesize_b = self.player.samplesizemmb8
+            payoff_text_a = self.player.texta8()
+            payoff_text_b = self.player.textb8()
         elif self.player.randompayoff == 9:
             payoffa = round(self.player.amounta9)
             payoffb = round(self.player.amountb9)
@@ -593,6 +669,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 9"
             payoffchoice = self.player.choice9()
             realprobb = realprobb9
+            payoff_samplesize_a = self.player.samplesizemma9
+            payoff_samplesize_b = self.player.samplesizemmb9
+            payoff_text_a = self.player.texta9()
+            payoff_text_b = self.player.textb9()
         elif self.player.randompayoff == 10:
             payoffa = round(self.player.amounta10)
             payoffb = round(self.player.amountb10)
@@ -603,6 +683,10 @@ class s1b_result_3 (Page):
             payoffpair = "Pair 10"
             payoffchoice = self.player.choice10()
             realprobb = realprobb10
+            payoff_samplesize_a = self.player.samplesizemma10
+            payoff_samplesize_b = self.player.samplesizemmb10
+            payoff_text_a = self.player.texta10()
+            payoff_text_b = self.player.textb10()
         return {
             'payoffa': payoffa,
             'payoffb': payoffb,
@@ -614,6 +698,10 @@ class s1b_result_3 (Page):
             'payoff_probad': probad,
             'payoff_probbu': probbu,
             'payoff_probbd': probbd,
+            'payoff_text_a':payoff_text_a,
+            'payoff_text_b':payoff_text_b,
+            'payoff_samplesize_a':payoff_samplesize_a,
+            'payoff_samplesize_b':payoff_samplesize_b,
         }
 
 class s1b_result_5 (Page):

@@ -2,7 +2,6 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-
 <div style="text-align: center">Your chosen money machines</div>
 
 {% endblock %}
@@ -15,20 +14,11 @@ div {
 </style>
 
 
-<div class="instructions well well-lg" style="position:absolute; top:180px;width: 900px; ">
-
-    <p>
-        Thank you. Your 10 choices were recorded and are shown below.</p>
-        Please click on the “Next” button to have one money machine randomly selected for payoff.
-    </p>
+<div class="instructions well well-lg">
+    Thank you. Your 10 choices were recorded and are shown below.</p>
+    <p>Please click on the “Next” button to have one money machine randomly selected for payoff.</p>
 </div>
-
-<div style="
-    margin-left:100px;
-    font-size: 20px;
-    position:absolute;
-    top:290px
-    ">
+<div style="margin-left:100px;font-size: 20px;position:absolute;top:220px">
     <p>
        Pair 1, you chose Money Machine {{ player.choice1 }}
     </p>
@@ -37,29 +27,29 @@ div {
 <div><button name="mm11a_choice" class="no-click"
             value="True" Type="button"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya1 }};
-            position: absolute; top:330px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:260px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
     <p id="pca1" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta1 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona1u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     <p id="linea11"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea12" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona1d }}</p>
+    <p id="linea12" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
     <button name="mm11b_choice"
             value="False" Type="button" class="no-click"
             style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb1 }};
-            position: absolute; top:330px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+            position: absolute; top:260px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
                 <p id="pcb1" style="line-height: 70%;">
                     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb1 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb1u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb11"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb12" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb1d }}</p>
+    <p id="lineb12" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
 <div style="
     margin-left:100px;
     font-size: 20px;
-    position: absolute; top:470px;
+    position: absolute; top:380px;
     ">
     <p>
        Pair 2, you chose Money Machine {{ player.choice2 }}
@@ -69,29 +59,29 @@ div {
 <div><button name="mm12a_choice"
             value="True" Type="button" class="no-click"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya2 }};
-             position: absolute; top:510px; height: 100px; width: 340px; font-size: 15px;  margin-left:100px">
+             position: absolute; top:420px; height: 100px; width: 340px; font-size: 15px;  margin-left:100px">
         <p id="pca2" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta2 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona2u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     <p id="linea21"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea22" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona2d }}</p>
+    <p id="linea22" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     </button>
     <button name="mm12b_choice"
             value="False" Type="button" class="no-click"
             style="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb2 }};
-            position: absolute; top:510px; height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
+            position: absolute; top:420px; height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
                         <p id="pcb2" style="line-height: 70%;">
             <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb2 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb2u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb21"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb22" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb2d }}</p>
+    <p id="lineb22" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     </button>
 </div>
 
 <div style="
     margin-left:100px;
     font-size: 20px;
-    position: absolute; top:650px;
+    position: absolute; top:540px;
     ">
     <p>
        Pair 3, you chose Money Machine {{ player.choice3 }}
@@ -101,22 +91,22 @@ div {
 <div><button name="mm13a_choice"
             value="True" Type="button"  class="no-click"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya3 }};
-            position: absolute; top:690px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:580px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca3" style="line-height: 70%;">
        <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta3 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona3u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="linea31"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea32" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona3d }}</p>
+    <p id="linea32" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
     <button name="mm13b_choice"
             value="False" Type="button" class="no-click"
             style="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb3 }};
-            position: absolute; top:690px; height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
+            position: absolute; top:580px; height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
                         <p id="pcb3" style="line-height: 70%;">
             <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb3 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb3u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb31"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb32" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb3d }}</p>
+    <p id="lineb32" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     </button>
 </div>
 
@@ -125,7 +115,7 @@ div {
 <div style="
     margin-left:100px;
     font-size: 20px;
-    position: absolute; top:830px;
+    position: absolute; top:700px;
     ">
     <p>
        Pair 4, you chose Money Machine {{ player.choice4 }}
@@ -135,29 +125,29 @@ div {
 <div><button name="mm14a_choice"
             value="True" Type="button"  class="no-click"
             style="text-align: left; background-color: {{ Constants.mmacolor  }}; opacity: {{ player.opacitya4 }};
-            position: absolute; top:870px;height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:740px;height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca4" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta4 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona4u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="linea41"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea42" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona4d }}</p>
+    <p id="linea42" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
     <button name="mm14b_choice"
             value="False" Type="button"  class="no-click"
             style="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb4 }};
-            position: absolute; top:870px;height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
+            position: absolute; top:740px;height: 100px; width: 340px;font-size: 15px; margin-left: 450px">
                         <p id="pcb4" style="line-height: 70%;">
             <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb4 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb4u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     <p id="lineb41"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb42" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb4d }}</p>
+    <p id="lineb42" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
 <div style="
     margin-left:100px;
     font-size: 20px;
-    position: absolute; top:1010px;
+    position: absolute; top:860px;
     ">
     <p>
        Pair 5, you chose Money Machine {{ player.choice5 }}
@@ -167,29 +157,29 @@ div {
 <div><button name="mm15a_choice"
             value="True" Type="button" class="no-click"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya5 }};
-            position: absolute; top:1050px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:900px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca5" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta5 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona5u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="linea51"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea52" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona5d }}</p>
+    <p id="linea52" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
     <button name="mm15b_choice"
             value="False" Type="button" class="no-click"
             style="text-align: left; background-color: {{ Constants.mmbcolor }}; opacity: {{ player.opacityb5 }};
-            position: absolute; top:1050px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+            position: absolute; top:900px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
         <p id="pcb5" style="line-height: 70%;">
             <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb5 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb5u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb51"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb52" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb5d }}</p>
+    <p id="lineb52" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
 
 <div style="
     margin-left:100px;
-    font-size: 20px; position: absolute; top:1190px;
+    font-size: 20px; position: absolute; top:1020px;
     ">
     <p>
        Pair 6, you chose Money Machine {{ player.choice6 }}
@@ -199,27 +189,27 @@ div {
 <div><button name="mm16a_choice" class="no-click"
             value="True" Type="button"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya6 }};
-            position: absolute; top:1230px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:1060px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca6" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta6 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona6u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="linea61"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea62" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona6d }}</p>
+    <p id="linea62" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
     <button name="mm16b_choice"
             value="False" Type="button" class="no-click"
             style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb6 }};
-            position: absolute; top:1230px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+            position: absolute; top:1060px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
                     <p id="pcb6" style="line-height: 70%;">
             <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb6 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb6u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb61"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb62" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb6d }}</p>
+    <p id="lineb62" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
 
-<div style="position: absolute; top:1370px;
+<div style="position: absolute; top:1180px;
     margin-left:100px;
     font-size: 20px;
     ">
@@ -231,27 +221,27 @@ div {
 <div><button name="mm17a_choice" class="no-click"
             value="True" Type="button"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya7 }};
-            position: absolute; top:1410px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:1220px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca7" style="line-height: 70%;">
      <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta7 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona7u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="linea71"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea72" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona7d }}</p>
+    <p id="linea72" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     </button>
     <button name="mm17b_choice"
             value="False" Type="button" class="no-click"
             style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb7 }};
-            position: absolute; top:1410px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+            position: absolute; top:1220px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
                         <p id="pcb7" style="line-height: 70%;">
                <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb7 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb7u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb71"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb72" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb7d }}</p>
+    <p id="lineb72" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
 
-<div style="position: absolute; top:1550px;
+<div style="position: absolute; top:1340px;
     margin-left:100px;
     font-size: 20px;
     ">
@@ -263,27 +253,27 @@ div {
 <div><button name="mm18a_choice" class="no-click"
             value="True" Type="button"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya8 }};
-            position: absolute; top:1590px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:1380px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca8" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta8 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona8u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="linea81"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea82" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona8d }}</p>
+    <p id="linea82" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
     <button name="mm18b_choice"
             value="False" Type="button" class="no-click"
             style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb8 }};
-            position: absolute; top:1590px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+            position: absolute; top:1380px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
                         <p id="pcb8" style="line-height: 70%;">
              <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb8 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb8u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb81"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb82" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb8d }}</p>
+    <p id="lineb82" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
 
-<div style="position: absolute; top:1730px;
+<div style="position: absolute; top:1500px;
     margin-left:100px;
     font-size: 20px;
     ">
@@ -295,22 +285,22 @@ div {
 <div><button name="mm19a_choice" class="no-click"
             value="True" Type="button"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya9 }};
-            position: absolute; top:1770px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:1540px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca9" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta9 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona9u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     <p id="linea91"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea92" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona9d }}</p>
+    <p id="linea92" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
     <button name="mm19b_choice"
             value="False" Type="button" class="no-click"
             style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb9 }};
-            position: absolute; top:1770px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+            position: absolute; top:1540px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
                         <p id="pcb9" style="line-height: 70%;">
              <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb9 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb9u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="lineb91"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb92" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb9d }}</p>
+    <p id="lineb92" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
@@ -319,7 +309,7 @@ div {
 <div style="
     margin-left:100px;
     font-size: 20px;
-    position: absolute; top:1910px;
+    position: absolute; top:1660px;
     ">
     <p>
        Pair 10, you chose Money Machine {{ player.choice10 }}
@@ -329,28 +319,28 @@ div {
 <div><button name="mm110a_choice" class="no-click"
             value="True" Type="button"
             style="text-align: left; background-color: {{ Constants.mmacolor }}; opacity: {{ player.opacitya10 }};
-            position: absolute; top:1950px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
+            position: absolute; top:1700px; height: 100px; width: 340px; font-size: 15px; margin-left:100px">
         <p id="pca10" style="line-height: 70%;">
     <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amounta10 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona10u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     <p id="linea101"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="linea102" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptiona10d }}</p>
+    <p id="linea102" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>>
     <button name="mm110b_choice"
             value="False" Type="button" class="no-click"
             style ="text-align: left; background-color: {{ Constants.mmbcolor  }}; opacity: {{ player.opacityb10 }};
-            position: absolute; top:1950px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
+            position: absolute; top:1700px; height: 100px; width: 340px; font-size: 15px; margin-left:450px">
                         <p id="pcb10" style="line-height: 70%;">
             <p style="float: left; line-height: 70%;width: 45%; text-align: right;">{{ amountb10 }}</p>
-    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb10u }}</p>
+    <p style="float: left; width: 55%; line-height: 70%; text-align: left;">¢</p>
     <p id="lineb101"  style="visibility: hidden;float: left; line-height: 70%;width: 45%; text-align: right;">  0
-    <p id="lineb102" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ with probability {{ player.proboptionb10d }}</p>
+    <p id="lineb102" style="visibility: hidden;float: left; width: 55%; line-height: 70%; text-align: left;">¢ </p>
     </button>
 </div>
 
 
 
-<button class="otree-next-button btn btn-primary next-button" style="position:absolute; top:2120px">Next</button>
+<button class="otree-next-button btn btn-primary next-button" style="position:absolute; top:1850px">Next</button>
 
 {% endblock %}
 
