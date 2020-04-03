@@ -7,7 +7,7 @@ from random import shuffle
 import math
 from math import factorial as fact
 import numpy as np
-from scipy import stats
+#from scipy import stats
 # This Python file uses the following encoding: utf-8
 import os, sys
 from array import *
